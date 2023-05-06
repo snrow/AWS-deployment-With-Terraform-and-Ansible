@@ -15,7 +15,7 @@ resource "aws_security_group" "lb_sg" {
     ingress {
         from_port   = 0
         to_port     = 0
-        protocol    = "TCP"
+        protocol    = "-1"
         cidr_blocks = [var.subnet_cidr]
    }
 
@@ -50,7 +50,7 @@ resource "aws_security_group" "db_web_sg" {
     ingress {
         from_port   = 0
         to_port     = 0
-        protocol    = "TCP"
+        protocol    = "-1"
         cidr_blocks = [var.subnet_cidr]
    }
 

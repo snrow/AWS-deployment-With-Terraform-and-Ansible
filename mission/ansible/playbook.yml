@@ -1,5 +1,6 @@
 ---
 - hosts:  lb_servers
+  become: yes
   name: Configure load balance servers
   gather_facts: no
   tasks:
@@ -7,6 +8,7 @@
       name: nginx_lb
 
 - hosts:  web_servers
+  become: yes
   name: Configure web servers
   gather_facts: no
   tasks:
@@ -14,6 +16,7 @@
       name: tomcat
 
 - hosts:  db_servers
+  become: yes
   name: Configure database servers
   gather_facts: no
   tasks:
