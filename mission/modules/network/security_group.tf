@@ -9,7 +9,7 @@ resource "aws_security_group" "workstation_sg" {
         from_port = 80
         to_port = 80
         protocol = "TCP"
-        cidr_blocks = ["147.235.204.237/32"]
+        cidr_blocks = ["172.31.14.183/32"]
     }
 
     ingress  {
@@ -17,7 +17,7 @@ resource "aws_security_group" "workstation_sg" {
         from_port = 22
         to_port = 22
         protocol = "TCP"
-        cidr_blocks = ["147.235.204.237/32"] 
+        cidr_blocks = ["172.31.14.183/32"] 
     }
     
     egress {
