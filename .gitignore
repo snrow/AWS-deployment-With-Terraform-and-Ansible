@@ -41,3 +41,5 @@ ansible.retry
 *.swp
 __pycache__/
 
+# aws
+.aws
