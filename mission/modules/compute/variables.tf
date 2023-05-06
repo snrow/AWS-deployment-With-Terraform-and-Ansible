@@ -61,3 +61,8 @@ variable "db_ip" {
   type = string
   default = "192.168.0.13"
 }
+
+variable "key_name" {
+  type = string
+  default = "eliran-task-key"
+}

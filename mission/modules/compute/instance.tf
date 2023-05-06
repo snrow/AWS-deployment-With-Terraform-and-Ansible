@@ -4,6 +4,7 @@ resource "aws_instance" "web" {
   subnet_id = data.aws_subnet.main_subnet.id
   associate_public_ip_address = var.associate_public_ip_adress
   private_ip = var.web_ip
+  key_name = var.key_name
   vpc_security_group_ids = [
     data.aws_security_group.workstation_sg.id
   ]
@@ -18,6 +19,7 @@ resource "aws_instance" "lb" {
   subnet_id = data.aws_subnet.main_subnet.id
   associate_public_ip_address = var.associate_public_ip_adress 
   private_ip = var.lb_ip
+  key_name = var.key_name
   vpc_security_group_ids = [
     data.aws_security_group.workstation_sg.id
   ]
@@ -32,6 +34,7 @@ resource "aws_instance" "db" {
   subnet_id = data.aws_subnet.main_subnet.id
   associate_public_ip_address = var.associate_public_ip_adress  
   private_ip = var.db_ip
+  key_name = var.key_name
   vpc_security_group_ids = [
     data.aws_security_group.workstation_sg.id
   ]
