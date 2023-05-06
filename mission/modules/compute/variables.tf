@@ -64,7 +64,7 @@ variable "db_ip" {
 
 variable "key_name" {
   type = string
-  default = "Eliran-AWS-Key"
+  default = "eliran-task-key"
 }
 
 variable "lb_sg_name" {
