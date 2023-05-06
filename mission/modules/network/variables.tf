@@ -23,11 +23,20 @@ variable "vpc_name" {
   default = "task-vpc"  
 }
 
-variable "sg_name" {
+variable "lb_sg_name" {
   type = string
-  default = "task-sg"  
+  default = "task-lb-sg"  
 }
-variable "sg_tag" {
+variable "lb_sg_tag" {
   type = string
-  default = "task-sg"
+  default = "task-lb-sg"
+}
+
+variable "db_web_sg_name" {
+  type = string
+  default = "task-db-wev-sg"  
+}
+variable "db_wev_sg_tag" {
+  type = string
+  default = "task-db-wev-sg"
 }

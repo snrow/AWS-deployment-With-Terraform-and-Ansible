@@ -1,6 +1,6 @@
 //file that will manage security groups\
-resource "aws_security_group" "workstation_sg" {
-    name = var.sg_name
+resource "aws_security_group" "lb_sg" {
+    name = var.lab_sg_name
     description = "AWS sg for app instance"
     vpc_id = aws_vpc.task_vpc.id
 
@@ -12,6 +12,13 @@ resource "aws_security_group" "workstation_sg" {
         cidr_blocks = ["16.16.121.38/32"] 
     }
 
+    ingress {
+        from_port   = 0
+        to_port     = 0
+        protocol    = "TCP"
+        cidr_blocks = [var.subnet_cidr]
+   }
+
     ingress  {
         description = "SSH in"
         from_port = 22
@@ -19,17 +26,35 @@ resource "aws_security_group" "workstation_sg" {
         protocol = "TCP"
         cidr_blocks = ["16.16.121.38/32"] 
     }
-    
-    egress {
-        from_port        = 0
-        to_port          = 0
-        protocol         = "-1"
-        cidr_blocks      = ["0.0.0.0/0"]
-        ipv6_cidr_blocks = ["::/0"]
+
+    tags = {
+        Name = var.lb_sg_tag
+  }
+  
+}
+
+resource "aws_security_group" "db_web_sg" {
+    name = var.lab_sg_name
+    description = "AWS sg for app instance"
+    vpc_id = aws_vpc.task_vpc.id
+
+    ingress {
+        from_port   = 0
+        to_port     = 0
+        protocol    = "TCP"
+        cidr_blocks = [var.subnet_cidr]
+   }
+
+    ingress  {
+        description = "SSH in"
+        from_port = 22
+        to_port = 22
+        protocol = "TCP"
+        cidr_blocks = ["16.16.121.38/32"] 
     }
 
     tags = {
-        Name = var.sg_tag
+        Name = var.lb_sg_tag
   }
   
 }
