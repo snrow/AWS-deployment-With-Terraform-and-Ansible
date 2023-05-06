@@ -1,6 +1,6 @@
 //file that will manage security groups\
 resource "aws_security_group" "lb_sg" {
-    name = var.lab_sg_name
+    name = var.lb_sg_name
     description = "AWS sg for app instance"
     vpc_id = aws_vpc.task_vpc.id
 
@@ -34,7 +34,7 @@ resource "aws_security_group" "lb_sg" {
 }
 
 resource "aws_security_group" "db_web_sg" {
-    name = var.lab_sg_name
+    name = var.db_web_sg_name
     description = "AWS sg for app instance"
     vpc_id = aws_vpc.task_vpc.id
 
@@ -54,7 +54,7 @@ resource "aws_security_group" "db_web_sg" {
     }
 
     tags = {
-        Name = var.lb_sg_tag
+        Name = var.db_web_sg_tag
   }
   
 }

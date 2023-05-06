@@ -12,9 +12,16 @@ data "aws_subnet" "main_subnet" {
   }
 }
 
-data "aws_security_group" "workstation_sg" {
+data "aws_security_group" "lb_sg" {
   filter {
     name = "tag:Name"
-    values = [var.sg_name]
+    values = [var.lb_sg_name]
+  }
+}
+
+data "aws_security_group" "db_web_sg" {
+  filter {
+    name = "tag:Name"
+    values = [var.db_web_sg_name]
   }
 }

@@ -34,9 +34,10 @@ variable "lb_sg_tag" {
 
 variable "db_web_sg_name" {
   type = string
-  default = "task-db-wev-sg"  
+  default = "task-db-web-sg"  
 }
-variable "db_wev_sg_tag" {
+variable "db_web_sg_tag" {
   type = string
-  default = "task-db-wev-sg"
+  default = "task-db-web-sg"
 }
+

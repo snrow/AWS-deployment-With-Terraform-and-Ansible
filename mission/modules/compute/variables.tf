@@ -64,5 +64,39 @@ variable "db_ip" {
 
 variable "key_name" {
   type = string
-  default = "eliran-task-key"
+  default = "Eliran-AWS-Key"
+}
+
+variable "lb_sg_name" {
+  type = string
+  default = "task-lb-sg"  
+}
+variable "lb_sg_tag" {
+  type = string
+  default = "task-lb-sg"
+}
+
+variable "db_web_sg_name" {
+  type = string
+  default = "task-db-web-sg"  
+}
+
+variable "db_web_sg_tag" {
+  type = string
+  default = "task-db-web-sg"
+}
+
+variable "web_ec2_name" {
+  type = string
+  default = "web-ec2"
+}
+
+variable "lb_ec2_name" {
+  type = string
+  default = "lb-ec2"
+}
+
+variable "db_ec2_name" {
+  type = string
+  default = "db-ec2"
 }

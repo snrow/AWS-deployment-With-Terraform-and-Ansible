@@ -3,15 +3,15 @@ Accounting:
     db_servers:
       hosts:
         DB:
-          ansible_host: 192.168.0.13
+          ansible_host: ${aws_instance.db.public_ip}
     lb_servers:
       hosts:
         LB:
-          ansible_host: 192.168.0.11
+          ansible_host: ${aws_instance.lb.public_ip}
     web_servers:
       hosts:
         WEB:
-          ansible_host: 192.168.0.12
+          ansible_host: ${aws_instance.web.public_ip}
   vars:
     ansible_ssh_private_key_file: /home/ubuntu/task/mission/eliran-task-key.pem
     ansible_ssh_common_args: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
