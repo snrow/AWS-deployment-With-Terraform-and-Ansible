@@ -10,6 +10,7 @@ resource "aws_security_group" "workstation_sg" {
         to_port = 80
         protocol = "TCP"
         cidr_blocks = ["172.31.14.183/32"]
+        ipv6_cidr_blocks = ["172.31.14.183/32"]
     }
 
     ingress  {
@@ -18,6 +19,8 @@ resource "aws_security_group" "workstation_sg" {
         to_port = 22
         protocol = "TCP"
         cidr_blocks = ["172.31.14.183/32"] 
+        ipv6_cidr_blocks = ["172.31.14.183/32"]
+
     }
     
     egress {
