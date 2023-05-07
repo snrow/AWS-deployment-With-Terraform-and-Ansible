@@ -8,6 +8,26 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
+variable "web_ip" {
+  type = string
+  default = "192.168.0.12"
+}
+
+variable "lb_ip" {
+  type = string
+  default = "192.168.0.11"
+}
+
+variable "db_ip" {
+  type = string
+  default = "192.168.0.13"
+}
+
+variable "key_name" {
+  type = string
+  default = "eliran-task-key"
+}
+
 variable "associate_public_ip_adress" {
   type = bool 
   default = true
@@ -47,26 +67,6 @@ variable "sg_tag" {
   default = "task-sg"
 }
 
-variable "web_ip" {
-  type = string
-  default = "192.168.0.12"
-}
-
-variable "lb_ip" {
-  type = string
-  default = "192.168.0.11"
-}
-
-variable "db_ip" {
-  type = string
-  default = "192.168.0.13"
-}
-
-variable "key_name" {
-  type = string
-  default = "eliran-task-key"
-}
-
 variable "lb_sg_name" {
   type = string
   default = "task-lb-sg"  
@@ -86,17 +86,3 @@ variable "db_web_sg_tag" {
   default = "task-db-web-sg"
 }
 
-variable "web_ec2_name" {
-  type = string
-  default = "web-ec2"
-}
-
-variable "lb_ec2_name" {
-  type = string
-  default = "lb-ec2"
-}
-
-variable "db_ec2_name" {
-  type = string
-  default = "db-ec2"
-}
