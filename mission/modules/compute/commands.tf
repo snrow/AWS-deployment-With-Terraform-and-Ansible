@@ -68,7 +68,7 @@ resource "null_resource" "user_console" {
 
     provisioner "local-exec" {
 
-        command = "echo  URL---> http://${aws_instance.lb.public_ip}/Test/"
+        command = "echo URL FOR The Website http://${aws_instance.lb.public_ip}/Test/"
 
     }
 
