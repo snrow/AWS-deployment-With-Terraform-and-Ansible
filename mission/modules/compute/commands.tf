@@ -9,17 +9,17 @@ resource "null_resource" "IP_configure" {
             Accounting:
                 children:
                     db_servers:
-                    hosts:
-                        DB:
-                        ansible_host: ${aws_instance.db.public_ip}
+                        hosts:
+                            DB:
+                                ansible_host: ${aws_instance.db.public_ip}
                     lb_servers:
-                    hosts:
-                        LB:
-                        ansible_host: ${aws_instance.lb.public_ip}
+                        hosts:
+                            LB:
+                                ansible_host: ${aws_instance.lb.public_ip}
                     web_servers:
-                    hosts:
-                        WEB:
-                        ansible_host: ${aws_instance.web.public_ip}
+                        hosts:
+                            WEB:
+                                ansible_host: ${aws_instance.web.public_ip}
                 vars:
                     ansible_ssh_private_key_file: /home/ubuntu/task/mission/eliran-task-key.pem
                     ansible_ssh_common_args: -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null
