@@ -25,6 +25,5 @@ module "network" {
   subnet_name = var.subnet_name
   lb_sg_name = var.lb_sg_name
   db_web_sg_name = var.db_web_sg_name
-  key_name = var.key_name
 
 }
