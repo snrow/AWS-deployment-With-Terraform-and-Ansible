@@ -63,3 +63,15 @@ resource "null_resource" "ansible_exc" {
 
     depends_on = [ null_resource.IP_configure]
 }
+
+esource "null_resource" "user_console" {
+
+    provisioner "local-exec" {
+
+        command = "echo  URL---> http://${aws_instance.lb.public_ip}/Test/"
+
+    }
+
+    depends_on = [ null_resource.ansible_exc]
+}
+

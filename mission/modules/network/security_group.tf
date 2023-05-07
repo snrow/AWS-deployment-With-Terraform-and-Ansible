@@ -5,11 +5,12 @@ resource "aws_security_group" "lb_sg" {
     vpc_id = aws_vpc.task_vpc.id
 
     ingress  {
-        description = "Allow port 80 from loadbalancer"
+        description = "Allow port 80 to loadbalancer"
         from_port = 80
         to_port = 80
         protocol = "TCP"
-        cidr_blocks = ["16.16.121.38/32"] 
+        cidr_blocks = ["0.0.0.0/0"] 
+        ipv6_cidr_blocks = ["::/0"]
     }
 
     ingress {
