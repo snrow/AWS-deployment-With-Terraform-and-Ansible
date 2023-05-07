@@ -1,4 +1,11 @@
 <!-- BEGIN_TF_DOCS -->
+## AWS with Terraform and Ansible
+This repository contains the Terraform configuration files and Ansible playbook to create a three-tiered application on AWS.
+
+## Prerequisites
+- Download Terraform to your workstation.
+- Have access to an AWS account.
+
 ## Requirements
 
 | Name | Version |
@@ -9,7 +16,7 @@
 |[AWS-Cli](#requirement\list) | 1.18.69 |
 
  
-## Getting Started
+## Steps to Follow
 
 To access and run any of the projects or missions in this repository, you can simply clone the repository to your local machine and follow those steps :
 
@@ -48,3 +55,30 @@ terraform apply -auto-approve
 ```bash
 terraform destroy -auto-approve
 ``` 
+
+                    ┌───────────┐
+                    │     PC    │
+                    └───────────┘
+                          │
+                          │ 
+                  ┌────────────────┐
+                  │Internet Gateway│
+                  └────────────────┘
+                          │
+                          │
+                 ┌───────────────────┐
+                 │     LB Server     │
+                 └───────────────────┘         
+                          │                        
+                          │             
+                          ▼               
+                    ┌─────────────┐  
+                    | Web Server  |
+                    └─────────────┘
+                          │                        
+                          │             
+                          ▼      
+                    ┌─────────────┐ 
+                    │ DB Server   │
+                    └─────────────┘  
+       
