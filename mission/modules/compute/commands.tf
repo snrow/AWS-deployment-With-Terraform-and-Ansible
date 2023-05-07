@@ -44,9 +44,19 @@ resource "null_resource" "IP_configure" {
     ]
 }
 
+resource "null_resource" "key_chmod" {
+
+    provisioner "local-exec" {
+
+        command = "chmod 400 /home/ubuntu/task/mission/eliran-task-key.pem"
+
+    }
+}
+
 resource "null_resource" "ansible_exc" {
 
     provisioner "local-exec" {
+
         command = "ansible-playbook -i /home/ubuntu/task/mission/ansible/inventory.yml /home/ubuntu/task/mission/ansible/playbook.yml --key-file /home/ubuntu/task/mission/eliran-task-key.pem"
 
     }
