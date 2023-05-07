@@ -64,7 +64,7 @@ resource "null_resource" "ansible_exc" {
     depends_on = [ null_resource.IP_configure]
 }
 
-esource "null_resource" "user_console" {
+resource "null_resource" "user_console" {
 
     provisioner "local-exec" {
 
