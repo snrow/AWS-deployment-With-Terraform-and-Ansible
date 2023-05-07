@@ -44,4 +44,7 @@ terraform apply -auto-approve
 
 6. Browse to the URL you got in the console
 
-
+7. After you done don't forget to destroy all the resources
+```bash
+terraform destroy -auto-approve
+``` 
